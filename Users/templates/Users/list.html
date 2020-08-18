@@ -1,0 +1,31 @@
+{% extends "Submission/base.html" %}
+{% block content %}
+<center>
+    <h1>Submissions</h1>
+    <br>
+    <br>
+
+    {% for user in object_list %}
+        <div class = "row">
+            <div class="col-sm">
+              <label for="year">Name</label>
+                <h5><a href="{% url 'Users-specifics' user.slug%}">{{ user.first_name }} {{ user.last_name }}</a></h5>
+            </div>
+            <div class="col-sm">
+              <label for="year">Email</label>
+                <h5>{{ user.email }}</h5>
+            </div>
+            <div class="col-sm">
+              <label for="year">Phone Number</label>
+                <h5>{{ user.phone_number }}</h5>
+            </div>
+        </div>
+    {% endfor %}
+
+
+    <br>
+    <br>
+    <br>
+     </center>
+
+{% endblock content %}

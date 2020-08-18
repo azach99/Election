@@ -1,0 +1,40 @@
+{% extends "Submission/base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+    <div class="content-section">
+            <h3>First Name</h3>
+            <p style = "word-wrap: break-word">{{ object.first_name }}</p>
+            <h3>Last Name</h3>
+            <p style = "word-wrap: break-word">{{ object.last_name }}</p>
+            <h3>Email</h3>
+            <p style = "word-wrap: break-word">{{ object.email }}</p>
+            <h3>Phone Number</h3>
+            <p style = "word-wrap: break-word">{{ object.phone_number }}</p>
+            <h3>Question 1</h3>
+            <p style = "word-wrap: break-word">{{ object.question_1 }}</p>
+            <h3>Question 2</h3>
+            <p style = "word-wrap: break-word">{{ object.question_2 }}</p>
+            <h3>Question 3</h3>
+            <p style = "word-wrap: break-word">{{ object.question_3 }}</p>
+            <h3>Question 4</h3>
+            {% for name in object.question_4 %}
+                <p style = "word-wrap: break-word">{{ name }}</p>
+            {% endfor %}
+            <h3>Question 5</h3>
+            {% for name in object.question_5 %}
+                <p style = "word-wrap: break-word">{{ name }}</p>
+            {% endfor %}
+            <h3>Question 6</h3>
+            <p style = "word-wrap: break-word">{{ object.question_6 }}</p>
+            <h3>Question 7</h3>
+            <p style = "word-wrap: break-word">{{ object.question_7 }}</p>
+            <h3>Question 8</h3>
+            <p style = "word-wrap: break-word">{{ object.question_8 }}</p>
+            <h3>Question 9</h3>
+            <p style = "word-wrap: break-word">{{ object.question_9 }}</p>
+            <h3>Question 10</h3>
+            <p style = "word-wrap: break-word">{{ object.question_10 }}</p>
+
+    </div>
+
+{% endblock content %}
