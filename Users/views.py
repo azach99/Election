@@ -21,6 +21,10 @@ def register(request):
         form = UserRegisterForm()
     return render(request, 'Users/register.html', {'form': form})
 
+def disable_register(request):
+    messages.warning(request, "Registrations are Disabled at this Time")
+    return redirect('Submission-home')
+
 def secret_function():
     characters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M',
                   'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z',
@@ -37,7 +41,6 @@ def secret_function():
 def submission(request):
     if request.method == "POST":
         form = SubsForm(request.POST)
-        #form.verify_num()
         if form.is_valid():
             form.save()
             p = Subs.objects.filter(email = request.user.email).first()
@@ -69,6 +72,9 @@ def submission(request):
                 return render(request, 'Users/submission.html', context)
             messages.success(request, 'Your submission has been saved')
             return redirect("Submission-home")
+        else:
+            messages.warning(request, "Make sure that you fill out all of the information")
+            return render(request, 'Users/submission.html', {'form': form})
     else:
         a = Subs.objects.filter(email = request.user.email).first()
         if (a is not None):
