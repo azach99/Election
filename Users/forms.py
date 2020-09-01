@@ -37,7 +37,7 @@ class SubsForm(forms.ModelForm):
     first_name = forms.CharField(required = True)
     last_name = forms.CharField(required = True)
     email = forms.EmailField(required = True)
-    phone_number = forms.CharField(required = True)
+    #phone_number = forms.CharField(required = False)
     question_1 = forms.ChoiceField(label = "President Elect", required = True, choices = SELECTIONS_1, widget = forms.RadioSelect)
     question_2 = forms.ChoiceField(label = "Recording Secretary", required = True, choices = SELECTIONS_1, widget = forms.RadioSelect)
     question_3 = forms.ChoiceField(label = "Assistant Recording Secretary", required = True, choices = SELECTIONS_1, widget = forms.RadioSelect)
@@ -57,7 +57,7 @@ class SubsForm(forms.ModelForm):
 
     class Meta:
         model = Subs
-        fields = ['first_name', 'last_name', 'email', 'phone_number',
+        fields = ['first_name', 'last_name', 'email',
                  'question_1', 'question_2', 'question_3',
                  'question_6', 'question_7', 'question_8', 'question_9',
                  'question_10', 'question_4', 'question_5']

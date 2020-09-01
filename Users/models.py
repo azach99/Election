@@ -34,7 +34,7 @@ class Subs(models.Model):
     slug = models.SlugField(max_length = 250)
     random_key = models.CharField(max_length = 250, blank = True)
     admin_email = models.EmailField(max_length = 100, default = 'admin_user@gmail.com')
-    phone_number = models.CharField(max_length = 200, default = '')
+    #phone_number = models.CharField(max_length = 200, default = '')
     question_1 = models.CharField(max_length = 100, default = '', choices = SELECTIONS)
     question_2 = models.CharField(max_length = 100, default = '', choices = SELECTIONS)
     question_3 = models.CharField(max_length = 100, default = '', choices = SELECTIONS)
