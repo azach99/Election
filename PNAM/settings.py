@@ -25,7 +25,7 @@ SECRET_KEY = 'vo30v8+7_v)3-$l%qp@%uwhf)3-!7wtnjy1=1%pr-p#vuaenc!'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['pnamdcelection2020.pythonanywhere.com']
 
 
 # Application definition
@@ -122,6 +122,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+
+STATIC_ROOT = '/home/pnamdcelection2020/Election/Submission/static/Subs'
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
